@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('titulo', 'Registro Académico') · AUNAR Villavicencio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    {{-- Bootstrap 5.3.3 copiado en public/bootstrap para que funcione sin internet --}}
+    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
 <body class="bg-light">
     <nav class="navbar navbar-dark bg-primary shadow-sm">
@@ -40,6 +41,6 @@
         Programación Web II · Corporación Universitaria Autónoma de Nariño
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>

@@ -30,6 +30,21 @@ Hay dos tipos de pruebas:
 | 15 | Cerrar sesión | `POST /logout` | Finalizar acceso | `302 → /login`; luego `GET /estudiantes` → `302 /login` | Correcto | La sesión se invalida y se regenera el token |
 | 16 | Volver a entrar | Se **detuvo y reinició** el servidor y se inició sesión de nuevo | Recuperar acceso y registros | `302 → /estudiantes`; aparecen ana.ficticia y carla.test | Correcto | Comprueba la persistencia en MySQL |
 
+### Procedimiento para la prueba 13 (en el navegador)
+
+1. `php artisan serve` y abrir <http://127.0.0.1:8000>. Iniciar sesión.
+2. En MySQL, anotar el total: `SELECT COUNT(*) FROM registro_academico.estudiantes;`
+3. En el listado, pulsar **Eliminar** (rojo) en un estudiante. Debe abrirse la ventana "Confirmar eliminación" con su nombre y correo.
+4. Pulsar **Cancelar**. La ventana se cierra y el estudiante sigue en la tabla.
+5. Repetir el paso 3 y cerrar con la **X** y con la tecla **Esc**. El estudiante debe seguir ahí.
+6. Opcional: con F12 → pestaña *Red* abierta, comprobar que al cancelar **no** aparece ninguna petición `DELETE`.
+7. Repetir la consulta del paso 2: el total debe ser el mismo.
+8. Anotar aquí el resultado y cambiar el estado de la fila 13.
+
+| Fecha | Navegador | Total antes | Total después | ¿Se abrió el modal? | ¿Cancelar conservó el registro? | Estado |
+|---|---|---|---|---|---|---|
+| | | | | | | Pendiente |
+
 ### Pruebas adicionales de seguridad
 
 | Prueba | Resultado obtenido | Estado |
